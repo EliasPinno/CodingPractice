@@ -17,3 +17,5 @@ class Solution:
         node.left = self.recursiveInvert(right)
         node.right = self.recursiveInvert(left)
         return node
+
+# Time: O(n). Space: O(n)
