@@ -23,4 +23,8 @@ class Solution:
             for midKey in solutionDict[topKey].keys():
                 solutions.append([topKey,midKey,(topKey+midKey)*(-1)])
         return solutions
-            
+# O(n^2 time), O(n) space.
+# Nested dictionaries were a very bad choice for this problem: better idea:
+# Just stop when you start reaching positive numbers in i
+# Skip repeated values of i
+# After a solution, move l and r in 1
