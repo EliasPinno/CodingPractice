@@ -17,3 +17,14 @@ class Solution:
 # O(nk) where n is number of strings, and k is the length of the longest string in the sequence.
 
             
+# Alt solution with a more intelligent approach:
+class Solution:
+    def longestCommonPrefix(self, strs: List[str]) -> str:
+        sortedStrs = sorted(strs)
+        outputStr = ""
+        currentChar = 0
+        while currentChar < len(sortedStrs[0]) and currentChar < len(sortedStrs[len(sortedStrs)-1]) and sortedStrs[0][currentChar] == sortedStrs[len(sortedStrs)-1][currentChar]:
+            outputStr += sortedStrs[0][currentChar]
+            currentChar += 1
+        return outputStr
+            
