@@ -19,3 +19,4 @@ class Solution:
       self.getInOrderTraversal(current.left, currentList)
       currentList.append(current.val)
       self.getInOrderTraversal(current.right, currentList)
+# (O(n) runtime, O(n) space)
