@@ -78,3 +78,42 @@ def getNewBoardWithMove(board,move):
         eliminateCol = 1 if colSrc < colDst else -1
         newBoard[rowSrc][eliminateCol+colSrc] = emptyTile
     return newBoard
+
+def getSolution():
+    initMoves = generateLegalMovesForBoard(startingBoard)
+    for move in initMoves:
+        result = getSolutionRecursive(startingBoard,[move])
+        if result != None:
+            return result
+    return None
+
+def getSolutionRecursive(boardOrg, moveList):
+    lastMove = moveList[-1] # Grab the last move in the list
+    currentBoard = getNewBoardWithMove(boardOrg,lastMove)
+    if isSolution(currentBoard):
+        return moveList
+    currentMoves = generateLegalMovesForBoard(currentBoard)
+    for move in currentMoves:
+        localMoveList = moveList[:]
+        localMoveList.append(move)
+        result = getSolutionRecursive(currentBoard,localMoveList)
+        if result != None:
+            return result
+    return None
+
+def visualizeMoveSequence(boardOrg, moveSequence):
+    print("Total moves in solution: " + str(len(moveSequence)))
+    print("Original board: ")
+    printBoard(boardOrg)
+    currentBoard = boardOrg
+    for move in moveSequence:
+        print("Making move: ")
+        print(move)
+        currentBoard = getNewBoardWithMove(currentBoard, move)
+        printBoard(currentBoard)
+
+solution = getSolution()
+visualizeMoveSequence(startingBoard, solution)
+
+
+
