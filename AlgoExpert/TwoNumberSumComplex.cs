@@ -12,7 +12,7 @@ public class Program {
         }
         else {
             arrayDict[array[i]] = arrayDict[array[i]]+1;
-            }
+        }
     }
     bool foundSolution = false;
     int[] solution = new int[2];
