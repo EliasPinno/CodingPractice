@@ -35,3 +35,5 @@ class BST:
         self.value = value
         self.left = None
         self.right = None
+
+# O(logn) time and space (since recursion uses the call stack.)
