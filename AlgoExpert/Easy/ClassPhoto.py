@@ -12,3 +12,5 @@ def verifyRow1FitsBehindRow2(row1, row2):
         if row2[i] >= row1[i]:
             return False
     return True
+
+#O(nlogn) time, O(1) space
