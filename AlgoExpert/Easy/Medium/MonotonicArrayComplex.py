@@ -19,5 +19,4 @@ def isMonotonic(array):
             if array[i] > array[i-1]:
                 return False
         return True
-    pass
 # O(n) time complexity, O(1) space
