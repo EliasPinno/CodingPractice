@@ -8,6 +8,7 @@ class BinaryTree:
         self.right = right
 
 # Recursive solution. O(n) space (may have entire tree on call stack)
+# The space is technically O(h), but h can at worst be n/2, hence O(n)
 # O(n) time (need to test every node)
 def symmetricalTree(tree):
     if tree == None:
