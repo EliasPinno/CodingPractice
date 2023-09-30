@@ -19,3 +19,4 @@ def bestDigits(number, numDigits):
         stack.pop()
     # Write your code here.
     return "".join(list(stack))
+# O(n) time, O(n) space
