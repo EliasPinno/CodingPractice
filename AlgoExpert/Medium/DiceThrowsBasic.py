@@ -16,3 +16,4 @@ def diceThrowsRecursive(numDice, numSides, target, memory):
             numWaysToReach += diceThrowsRecursive(numDice-1, numSides, target-i,memory)
     memory[numDice][target] = numWaysToReach
     return numWaysToReach
+# O(target*numDice) space, O(target*numDice*numSides) time
